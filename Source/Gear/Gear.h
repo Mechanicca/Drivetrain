@@ -15,7 +15,10 @@
 #include "Parameter/ParameterContainer.h"
 #include "Component/Component.h"
 
-#include "Gear/GearTypes.h"
+#include "Design/TeethCutter.h"
+#include "Design/GearBlank.h"
+
+#include "GearTypes.h"
 
 /* [GENERATED] */
 #include "Gear/GearParameterTagCollection.h"
@@ -31,22 +34,23 @@
 	#define DRIVETRAIN_NO_EXPORT
 #endif
 
+	class TopoDS_Shape;
+
 /* Plugin's namespace */
 namespace Component
 {
-#if false
 	template<typename GEAR_TYPE> class Gear;
 
 	/* ComponentTraits specialization for every Gear type */
 	template<typename GEAR_TYPE>
 	struct ComponentTraits<Gear<GEAR_TYPE>>
 	{
-		/* Component type */
-		using TComponent = Gear<GEAR_TYPE>;
-		/* Used parameter container type */
-		using TParameterContainer = Core::ParameterContainer<GearParameterTagCollection>;
+		using TComponentModelConstructor = ComponentModelConstructor
+			<
+				Design::GearBlank<GEAR_TYPE>,
+				Design::TeethCutter<GEAR_TYPE>
+			>;
 	};
-#endif
 
 	/* Forward declarations */
 	class IComponentModel;
@@ -59,8 +63,6 @@ namespace Component
 	public:
 
 		Gear( const std::shared_ptr<Core::ParameterContainer> Specification );
-
-		void update( void ) override final;
 
 	protected:
 

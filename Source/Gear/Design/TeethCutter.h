@@ -59,14 +59,12 @@ namespace Design
 	public:
 		TeethCutter( std::shared_ptr<Component::IComponentModel> ComponentModel );
 
-		std::unique_ptr<TopoDS_Shape> constructModelModifier( const std::shared_ptr<Core::ParameterContainer> Parameters ) const override final;
-
-		std::unique_ptr<TopoDS_Shape> applyModifier( const std::shared_ptr<TopoDS_Shape> ComponentShape, const std::shared_ptr<TopoDS_Shape> ModifierShape ) const override final;
-
 	protected:
 
 	private:
+		std::unique_ptr<TopoDS_Shape> constructModelModifier( const std::shared_ptr<Core::ParameterContainer> Parameters ) const override final;
 
+		std::unique_ptr<TopoDS_Shape> applyModifier( const std::shared_ptr<TopoDS_Shape> ComponentShape, const std::shared_ptr<TopoDS_Shape> ModifierShape ) const override final;
 	};
 
 	/* Instantiate all supported TeethCutters */

@@ -45,13 +45,10 @@ namespace Design
 	public:
 		GearBlank( void );
 
-	std::unique_ptr<TopoDS_Shape> constructComponentModel(
-			const std::shared_ptr<Core::ParameterContainer> Parameters ) const override final;
-
 	protected:
 
 	private:
-
+		std::unique_ptr<TopoDS_Shape> constructComponentModel( const std::shared_ptr<Core::ParameterContainer> Parameters ) const override final;
 	};
 
 	/* Instantiate all supported GearBlank specializations */

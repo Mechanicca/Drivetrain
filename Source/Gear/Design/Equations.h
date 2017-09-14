@@ -10,10 +10,10 @@
 
 /* Project specific inclusions */
 #include "Equation/Equation.h"
-#include "Gear/GearTypes.h"
-#include "Gear/GearParameterTagCollection.h"
+#include "Component/Exception.h"
 
-#include "Gear/Design/Exception.h"
+#include "GearTypes.h"
+#include "GearParameterTagCollection.h"
 
 /* Shared library support */
 #include "Gear/GearExport.h"

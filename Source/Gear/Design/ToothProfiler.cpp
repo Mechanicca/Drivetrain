@@ -50,6 +50,7 @@
 
 /* Project specific inclusions */
 #include "Parameter/ParameterContainer.h"
+#include "Component/Exception.h"
 
 #include "../Design/ToothProfiler.h"
 

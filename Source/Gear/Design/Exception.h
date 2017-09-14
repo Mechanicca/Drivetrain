@@ -28,8 +28,7 @@ namespace Component
 	{
 		namespace Design
 		{
-			struct GEAR_EXPORT ModelConstructionFailed : virtual Core::Exception::Generic {};
-			struct GEAR_EXPORT SpecificationIncomplete : virtual Core::Exception::Generic {};
+
 		}
 	}
 }
